@@ -244,14 +244,27 @@ type Position struct {
 	Column int64 `json:"column"`
 }
 
+func getFileHash(filePath string) (string, error) {
+	data, err := os.ReadFile(filePath)
+	if err != nil {
+		return "", err
+	}
+	return common.Hash(string(data)), nil
+}
+
 func (m *astAnalyzerModule) analyzeAsset(asset asset) (astAnalysis, error) {
+	currentHash, err := getFileHash(asset.Path)
+	if err != nil {
+		return astAnalysis{}, errutil.Wrapf(err, "failed to compute hash for asset path: %s", asset.Path)
+	}
+
 	// Get existing analyses for this asset
 	analysis, found, err := m.repo.getASTAnalysisByAssetID(m.sdk.Ctx, asset.ID, asset.AssetType)
 	if err != nil {
 		return analysis, dbeventbus.NewRetriableError(errutil.Wrap(err, "failed to get existing analyses"))
 	}
 
-	if found && analysis.AnalyzerVersion == analyzerVersion {
+	if found && analysis.AnalyzerVersion == analyzerVersion && analysis.ContentHash == currentHash {
 		m.sdk.Logger.Debug("analysis is up to date, skipping", "asset_id", asset.ID, "analysis", analysis.ID)
 		return analysis, nil
 	}
@@ -271,6 +284,7 @@ func (m *astAnalyzerModule) analyzeAsset(asset asset) (astAnalysis, error) {
 	analysis = astAnalysis{
 		AssetID:         asset.ID,
 		AnalyzerVersion: analyzerVersion,
+		ContentHash:     currentHash,
 		Results:         results,
 		AssetType:       asset.AssetType,
 		AssetPath:       asset.Path,

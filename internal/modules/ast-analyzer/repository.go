@@ -22,6 +22,7 @@ type astAnalysis struct {
 	AssetType       string     `db:"asset_type"`
 	AssetID         int64      `db:"asset_id"`
 	AssetPath       string     `db:"asset_path"`
+	ContentHash     string     `db:"content_hash"`
 	AnalyzerVersion int64      `db:"analyzer_version"`
 	Results         string     `db:"results"` // stores raw array of matches
 	CreatedAt       time.Time  `db:"created_at"`
@@ -70,6 +71,7 @@ func (r *astAnalyzerRepository) initializeTable() error {
 			asset_id INTEGER NOT NULL,
 			asset_type TEXT NOT NULL,
 			asset_path TEXT NOT NULL,
+			content_hash TEXT NOT NULL DEFAULT '',
 			analyzer_version INTEGER NOT NULL,
 			results TEXT NOT NULL,
 			created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -83,19 +85,23 @@ func (r *astAnalyzerRepository) initializeTable() error {
 		return errutil.Wrap(err, "failed to create ast_analysis_results table schema")
 	}
 
+	// Try adding column in case database was initialized with an older version
+	_, _ = r.db.Exec("ALTER TABLE ast_analysis_results ADD COLUMN content_hash TEXT NOT NULL DEFAULT ''")
+
 	return nil
 }
 
 func (r *astAnalyzerRepository) createAnalysis(ctx context.Context, analysis astAnalysis) error {
 	query := `
-		INSERT INTO ast_analysis_results (asset_id, asset_type, asset_path, analyzer_version, results)
-		VALUES (?, ?, ?, ?, ?)
+		INSERT INTO ast_analysis_results (asset_id, asset_type, asset_path, content_hash, analyzer_version, results)
+		VALUES (?, ?, ?, ?, ?, ?)
 		ON CONFLICT(asset_id, asset_type) DO UPDATE SET
+			content_hash = excluded.content_hash,
 			analyzer_version = excluded.analyzer_version,
 			results = excluded.results,
 			updated_at = CURRENT_TIMESTAMP	
 	`
-	_, err := r.db.ExecContext(ctx, query, analysis.AssetID, analysis.AssetType, analysis.AssetPath, analysis.AnalyzerVersion, analysis.Results)
+	_, err := r.db.ExecContext(ctx, query, analysis.AssetID, analysis.AssetType, analysis.AssetPath, analysis.ContentHash, analysis.AnalyzerVersion, analysis.Results)
 	if err != nil {
 		return errutil.Wrap(err, "failed to create ast analysis")
 	}
