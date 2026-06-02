@@ -61,6 +61,8 @@ type Options struct {
 	CaidoHostname                    string              `yaml:"caido-hostname"`
 	CaidoPort                        int                 `yaml:"caido-port"`
 	OverrideContentCheckInterval     time.Duration       `yaml:"override-content-check-interval"`
+	NatsEnabled                      bool                `yaml:"nats-enabled"`
+	NatsURL                          string              `yaml:"nats-url"`
 }
 
 // AssetService interface

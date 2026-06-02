@@ -29,6 +29,7 @@ import (
 	jsingestion "github.com/francisconeves97/jxscout/internal/modules/js-ingestion"
 	"github.com/francisconeves97/jxscout/internal/modules/overrides"
 	"github.com/francisconeves97/jxscout/internal/modules/sourcemaps"
+	"github.com/francisconeves97/jxscout/internal/modules/nats"
 	jxscouttypes "github.com/francisconeves97/jxscout/pkg/types"
 	"github.com/jmoiron/sqlx"
 
@@ -213,6 +214,7 @@ func (s *jxscout) registerCoreModules() {
 		sourcemaps.NewSourceMaps(s.options.AssetSaveConcurrency),
 		overridesModule,
 		astanalyzer.NewAstAnalyzerModule(s.options.ASTAnalyzerConcurrency),
+		nats.NewNatsModule(),
 	}
 
 	for _, module := range coreModules {

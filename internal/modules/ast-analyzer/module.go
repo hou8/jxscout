@@ -281,6 +281,17 @@ func (m *astAnalyzerModule) analyzeAsset(asset asset) (astAnalysis, error) {
 		return analysis, dbeventbus.NewRetriableError(errutil.Wrap(err, "failed to store ast analysis results"))
 	}
 
+	event := EventASTAnalysisCompleted{
+		AssetID:   analysis.AssetID,
+		AssetType: analysis.AssetType,
+		AssetPath: analysis.AssetPath,
+		Results:   analysis.Results,
+	}
+
+	if err := m.sdk.DBEventBus.Publish(m.sdk.Ctx, m.sdk.Database, TopicASTAnalysisCompleted, event); err != nil {
+		m.sdk.Logger.Error("failed to publish ast analysis completed event", "err", err)
+	}
+
 	return analysis, nil
 }
 
