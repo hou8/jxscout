@@ -14,12 +14,30 @@ const evalAnalyzerBuilder = (
         return;
       }
 
-      // Check if this is an eval call
-      if (
-        node.callee.type === "Identifier" &&
-        node.callee.name === "eval" &&
-        node.arguments.length >= 1
-      ) {
+      let isEvalLike = false;
+      let evalType = "";
+
+      if (node.callee.type === "Identifier") {
+        const name = node.callee.name;
+        if (["eval", "setTimeout", "setInterval", "Function", "execScript", "executeScript"].includes(name) && node.arguments.length >= 1) {
+          isEvalLike = true;
+          evalType = name;
+        }
+      } else if (node.callee.type === "MemberExpression") {
+        const callee = node.callee;
+        if (
+          callee.object.type === "Identifier" &&
+          (callee.object.name === "$" || callee.object.name === "jQuery") &&
+          callee.property.type === "Identifier" &&
+          callee.property.name === "globalEval" &&
+          node.arguments.length >= 1
+        ) {
+          isEvalLike = true;
+          evalType = "globalEval";
+        }
+      }
+
+      if (isEvalLike) {
         const match: AnalyzerMatch = {
           filePath: args.filePath,
           analyzerName: EVAL_ANALYZER_NAME,
@@ -28,9 +46,9 @@ const evalAnalyzerBuilder = (
           end: node.loc.end,
           tags: {
             eval: true,
+            [`eval-type-${evalType.toLowerCase()}`]: true,
           },
         };
-
         matchesReturn.push(match);
       }
     },

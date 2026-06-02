@@ -26,6 +26,7 @@ import { windowNameAnalyzerBuilder } from "./tree-analyzers/window-name";
 import { windowOpenAnalyzerBuilder } from "./tree-analyzers/window-open";
 import { dangerousHtmlAnalyzerBuilder } from "./tree-analyzers/react-dangerously-set-inner-html";
 import { httpMethodsAnalyzerBuilder } from "./tree-analyzers/http-methods";
+import { cryptoAnalyzerBuilder } from "./tree-analyzers/crypto";
 
 export function parseFile(filePath: string): AnalyzerParams {
   const fileContent = fs.readFileSync(filePath, "utf-8");
@@ -99,7 +100,8 @@ export type AnalyzerType =
   | "window-name"
   | "window-open"
   | "dangerous-html"
-  | "http-methods";
+  | "http-methods"
+  | "crypto";
 
 export function analyzeFile(
   filePath: string,
@@ -195,6 +197,7 @@ export function analyzeFile(
     "http-methods",
     httpMethodsAnalyzerBuilder
   );
+  const cryptoAnalyzer = createAnalyzer("crypto", cryptoAnalyzerBuilder);
 
   traverse(args.source, args.ast, {
     Literal(node, ancestors) {
@@ -261,6 +264,10 @@ export function analyzeFile(
       sessionStorageAnalyzer?.MemberExpression?.(node, ancestors);
       locationAnalyzer?.MemberExpression?.(node, ancestors);
       windowNameAnalyzer?.MemberExpression?.(node, ancestors);
+      cryptoAnalyzer?.MemberExpression?.(node, ancestors);
+    },
+    Identifier(node, ancestors) {
+      cryptoAnalyzer?.Identifier?.(node, ancestors);
     },
     VariableDeclarator(node, ancestors) {
       documentDomainAnalyzer?.VariableDeclarator?.(node, ancestors);

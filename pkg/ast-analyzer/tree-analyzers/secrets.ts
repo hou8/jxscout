@@ -5728,6 +5728,66 @@ const SECRET_PATTERNS = [
     name: "zopim_account_key",
     regex: new RegExp("zopim[_-]?account[_-]?key(=| =|:| :)"),
   },
+  // Additional credentials from reference config
+  { name: "Google API Key", regex: new RegExp("AIza[0-9A-Za-z_\\-]{35}") },
+  { name: "Google OAuth Token", regex: new RegExp("ya29\\.[0-9A-Za-z_-]+") },
+  { name: "Aliyun Access Key", regex: new RegExp("LTAI[A-Za-z\\d]{12,30}") },
+  { name: "Tencent Access Key", regex: new RegExp("AKID[A-Za-z\\d]{13,40}") },
+  { name: "Tencent APIGW AppKey", regex: new RegExp("APID[a-zA-Z0-9]{32,42}") },
+  { name: "Volcengine Access Key", regex: new RegExp("(?:AKLT|AKTP)[a-zA-Z0-9]{35,50}") },
+  { name: "Kingsoft Access Key", regex: new RegExp("AKLT[a-zA-Z0-9-_]{16,28}") },
+  { name: "JD Cloud Access Key", regex: new RegExp("JDC_[0-9A-Z]{25,40}") },
+  { name: "Baidu Access Key", regex: new RegExp("ALTAK[0-9A-Za-z]{20,30}") },
+  { name: "Huawei Access Key", regex: new RegExp("[A-Z0-9]{20}") },
+  { name: "UCloud Key", regex: new RegExp("UC[A-Za-z0-9]{10,40}") },
+  { name: "QingCloud Key", regex: new RegExp("QY[A-Za-z0-9]{10,40}") },
+  { name: "Unicom Key", regex: new RegExp("LTC[A-Za-z0-9]{10,60}") },
+  { name: "Mobile Key", regex: new RegExp("YD[A-Za-z0-9]{10,60}") },
+  { name: "Telecom Key", regex: new RegExp("CTC[A-Za-z0-9]{10,60}") },
+  { name: "YYT Key", regex: new RegExp("YYT[A-Za-z0-9]{10,60}") },
+  { name: "Yongyou Key", regex: new RegExp("YY[A-Za-z0-9]{10,40}") },
+  { name: "Nanda Key", regex: new RegExp("CI[A-Za-z0-9]{10,40}") },
+  { name: "GitHub PAT", regex: new RegExp("(?:ghp|gho|ghu|ghs|ghr|github_pat)_[a-zA-Z0-9_]{36,255}") },
+  { name: "GitLab PAT", regex: new RegExp("glpat-[a-zA-Z0-9\\-=_]{20,22}") },
+  { name: "JWT", regex: new RegExp("eyJ[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9._-]{10,}") },
+  { name: "Bearer Token", regex: new RegExp("[Bb]earer\\s+[a-zA-Z0-9\\-=._+/\\\\]{20,500}") },
+  { name: "Basic Auth", regex: new RegExp("[Bb]asic\\s+[A-Za-z0-9+/]{18,}={0,2}") },
+  { name: "Stripe Key", regex: new RegExp("(?:sk|pk)_(?:live|test)_[A-Za-z0-9]{24,}") },
+  { name: "Grafana SA", regex: new RegExp("glsa_[A-Za-z0-9]{32}_[A-Fa-f0-9]{8}") },
+  { name: "Grafana API", regex: new RegExp("eyJrIjoi[a-zA-Z0-9\\-_+/]{50,100}={0,2}") },
+  { name: "Private Key PEM", regex: new RegExp("-----BEGIN\\s+(?:RSA|EC|OPENSSH|DSA|PGP)?\\s*PRIVATE\\s+KEY-----") },
+  { name: "Slack Webhook", regex: new RegExp("https://hooks\\.slack\\.com/services/[a-zA-Z0-9\\-_]{6,12}/[a-zA-Z0-9\\-_]{6,12}/[a-zA-Z0-9\\-_]{15,24}") },
+  { name: "WeChat Webhook", regex: new RegExp("https://qyapi\\.weixin\\.qq\\.com/cgi-bin/webhook/send\\?key=[a-zA-Z0-9\\-]{25,50}") },
+  { name: "DingTalk Webhook", regex: new RegExp("https://oapi\\.dingtalk\\.com/robot/send\\?access_token=[a-z0-9]{50,80}") },
+  { name: "Feishu Webhook", regex: new RegExp("https://open\\.feishu\\.cn/open-apis/bot/v2/hook/[a-z0-9\\-]{25,50}") },
+  { name: "WeChat AppID", regex: new RegExp("wx[a-f0-9]{15,18}") },
+  { name: "WeChat GHID", regex: new RegExp("gh_[a-f0-9]{11,13}") },
+  { name: "DingTalk CorpID", regex: new RegExp("ding[a-zA-Z0-9]{32}") },
+  { name: "DingTalk AppKey", regex: new RegExp("ding[a-z0-9]{16}") },
+  { name: "JDBC Connection", regex: new RegExp("jdbc:[a-z:]+://[a-z0-9\\.\\-_:;=/@?,&]+") },
+  { name: "Tencent Map Key", regex: new RegExp("[A-Z0-9]{5}(?:-[A-Z0-9]{5}){5}") },
+  { name: "G-Core Labs Key", regex: new RegExp("gcore[A-Za-z0-9]{10,30}") },
+  // Cloud Buckets from cloud-ssrf-patterns.md
+  { name: "Aliyun OSS Bucket", regex: new RegExp("https?://([a-zA-Z0-9-]+\\.)*(oss-)?[a-zA-Z0-9-]+\\.aliyuncs\\.com") },
+  { name: "Huawei OBS Bucket", regex: new RegExp("https?://([a-zA-Z0-9-]+\\.)*(obs-)?[a-zA-Z0-9-]+\\.(myhuaweicloud\\.com|myhwclouds\\.com)") },
+  { name: "Tencent COS Bucket", regex: new RegExp("https?://([a-zA-Z0-9-]+\\.)*(cos-)?[a-zA-Z0-9-]+\\.myqcloud\\.com") },
+  { name: "Baidu BOS Bucket", regex: new RegExp("https?://([a-zA-Z0-9-]+\\.)*[a-zA-Z0-9-]+\\.bcebos\\.com") },
+  { name: "Google GCS Bucket", regex: new RegExp("https?://([a-zA-Z0-9-]+\\.)*storage\\.googleapis\\.com") },
+  { name: "Azure Blob Storage", regex: new RegExp("https?://([a-zA-Z0-9-]+\\.)*blob\\.core\\.windows\\.net") },
+  { name: "JD Cloud OSS Bucket", regex: new RegExp("https?://([a-zA-Z0-9-]+\\.)*(oss-)?[a-zA-Z0-9-]+\\.(jdcloud-oss\\.com|jcloudcs\\.com)") },
+];
+
+const EXCLUSION_PATTERNS = [
+  /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/,
+  /^rgb\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\)$/,
+  /^rgba\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*,\s*[0-9.]+\s*\)$/,
+  /^[0-9]+%?$/,
+  /^[a-zA-Z-]+\s+.*$/,
+  /^[a-zA-Z0-9_-]{1,7}$/,
+  /^application\/(json|javascript|xml|x-www-form-urlencoded)$/,
+  /^text\/(html|plain|css|javascript)$/,
+  /^https?:\/\/[a-zA-Z0-9.-]+$/,
+  /^image\/[a-zA-Z0-9.+-]+$/
 ];
 
 export const SECRETS_ANALYZER_NAME = "secrets";
@@ -5739,6 +5799,10 @@ const secretsAnalyzerBuilder = (
   return {
     Literal(node, ancestors) {
       if (!node.loc || typeof node.value !== "string") {
+        return;
+      }
+
+      if (EXCLUSION_PATTERNS.some(re => re.test(node.value))) {
         return;
       }
 

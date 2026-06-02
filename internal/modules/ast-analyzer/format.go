@@ -475,6 +475,9 @@ var localStorageTags = []string{"local-storage"}
 // session-storage tags
 var sessionStorageTags = []string{"session-storage"}
 
+// crypto tags
+var cryptoTags = []string{"crypto"}
+
 var clientBehaviorTags = common.AppendAll(
 	eventTags,
 	evalTags,
@@ -486,6 +489,7 @@ var clientBehaviorTags = common.AppendAll(
 	urlSearchParamsTags,
 	locationTags,
 	storageTags,
+	cryptoTags,
 )
 
 func buildClientBehaviorTree(matchesByTag map[string][]AnalyzerMatch) ASTAnalyzerTreeNode {
@@ -804,6 +808,15 @@ func buildClientBehaviorTree(matchesByTag map[string][]AnalyzerMatch) ASTAnalyze
 		}
 
 		behaviorNode.Children = append(behaviorNode.Children, windowNameNode)
+	}
+
+	if hasAnyMatches(matchesByTag, cryptoTags) {
+		cryptoNode := createNavigationTreeNode(ASTAnalyzerTreeNode{
+			Label:    "Cryptography",
+			IconName: "resources:javascript",
+		})
+		addMatchesToNode(&cryptoNode, matchesByTag, cryptoTags)
+		behaviorNode.Children = append(behaviorNode.Children, cryptoNode)
 	}
 
 	return behaviorNode

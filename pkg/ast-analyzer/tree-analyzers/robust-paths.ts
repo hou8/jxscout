@@ -525,6 +525,28 @@ function processStringConcatenation(node: Node): string {
   return "EXPR";
 }
 
+const SSRF_PARAMS = new Set([
+  "url", "link", "src", "source", "display", "sourceurl", "imageurl",
+  "domain", "share", "target", "u", "3g", "imgsrc", "urlpath", "stream.url",
+  "stockapi", "path", "source_url", "file", "wap", "page", "redirect", "return",
+  "next", "goto", "out", "continue", "destination", "redir", "redirect_uri",
+  "view", "data", "reference", "q", "search", "feed", "img", "image", "load",
+  "site", "content", "proxy", "request", "navigate", "jump", "fetch",
+  "callback_url", "return_url"
+].map(p => p.toLowerCase()));
+
+const CMD_INJECTION_PARAMS = new Set([
+  "cmd", "exec", "command", "execute", "ping", "query", "jump", "code", "reg",
+  "do", "func", "arg", "option", "load", "process", "step", "read", "function",
+  "feature", "exe", "module", "payload", "run", "daemon", "upload", "dir",
+  "download", "log", "ip", "cli", "ipaddress", "txt", "case", "count"
+].map(p => p.toLowerCase()));
+
+const JSONP_PARAMS = new Set([
+  "callback", "cb", "jsonp", "json", "call", "ca", "callbackmethod",
+  "jsonpcallback", "fun", "jsonp_callback", "cb_func"
+].map(p => p.toLowerCase()));
+
 function createPathMatch(
   args: AnalyzerParams,
   node: Node,
@@ -613,6 +635,25 @@ function createPathMatch(
     }
   }
 
+  let hasSSRFParam = false;
+  let hasCmdInjectionParam = false;
+  let hasJSONPParam = false;
+
+  if (parsedUrl) {
+    for (const [key] of parsedUrl.searchParams) {
+      const normKey = key.toLowerCase();
+      if (SSRF_PARAMS.has(normKey)) {
+        hasSSRFParam = true;
+      }
+      if (CMD_INJECTION_PARAMS.has(normKey)) {
+        hasCmdInjectionParam = true;
+      }
+      if (JSONP_PARAMS.has(normKey)) {
+        hasJSONPParam = true;
+      }
+    }
+  }
+
   return {
     filePath: args.filePath,
     analyzerName: ROBUST_PATHS_ANALYZER_NAME,
@@ -629,6 +670,9 @@ function createPathMatch(
       ...(isAPI && { api: true }),
       ...(processedValue.includes("?") && { query: true }),
       ...(processedValue.includes("#") && { fragment: true }),
+      ...(hasSSRFParam && { "ssrf-parameter": true }),
+      ...(hasCmdInjectionParam && { "cmd-injection-parameter": true }),
+      ...(hasJSONPParam && { "jsonp-parameter": true }),
     },
     extra,
   };
