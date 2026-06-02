@@ -5,6 +5,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"errors"
+	"strings"
 	"time"
 
 	"github.com/francisconeves97/jxscout/internal/core/common"
@@ -53,7 +54,7 @@ type astAnalyzerRepository struct {
 
 func newAstAnalyzerRepository(db *sqlx.DB) (*astAnalyzerRepository, error) {
 	repo := &astAnalyzerRepository{
-		db: db,
+		db: db.Unsafe(),
 	}
 
 	if err := repo.initializeTable(); err != nil {
@@ -86,7 +87,11 @@ func (r *astAnalyzerRepository) initializeTable() error {
 	}
 
 	// Try adding column in case database was initialized with an older version
-	_, _ = r.db.Exec("ALTER TABLE ast_analysis_results ADD COLUMN content_hash TEXT NOT NULL DEFAULT ''")
+	if _, err := r.db.Exec("ALTER TABLE ast_analysis_results ADD COLUMN content_hash TEXT NOT NULL DEFAULT ''"); err != nil {
+		if !strings.Contains(err.Error(), "duplicate column name") {
+			return errutil.Wrap(err, "failed to alter table to add content_hash")
+		}
+	}
 
 	return nil
 }
