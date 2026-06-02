@@ -70,8 +70,8 @@ func main() {
 	)
 
 	flagSet.CreateGroup("nats", "nats configuration",
-		flagSet.BoolVar(&options.NatsEnabled, "nats-enabled", true, "enable pushing AST analysis results to NATS"),
-		flagSet.StringVar(&options.NatsURL, "nats-url", "nats://localhost:4222", "the NATS server connection URL"),
+		flagSet.BoolVar(&options.NatsEnabled, constants.FlagNatsEnabled, constants.DefaultNatsEnabled, constants.DescriptionNatsEnabled),
+		flagSet.StringVar(&options.NatsURL, constants.FlagNatsURL, constants.DefaultNatsURL, constants.DescriptionNatsURL),
 	)
 
 	if options.ProjectName == constants.DefaultProjectName {

@@ -44,6 +44,10 @@ const (
 	DefaultCaidoHostname                = "localhost"
 	DefaultCaidoPort                    = 8080
 	DefaultOverrideContentCheckInterval = time.Second * 5
+
+	// NATS configuration
+	DefaultNatsEnabled = true
+	DefaultNatsURL     = "nats://localhost:4222"
 )
 
 // Flag names for jxscout options
@@ -86,6 +90,10 @@ const (
 	FlagCaidoHostname                = "caido-hostname"
 	FlagCaidoPort                    = "caido-port"
 	FlagOverrideContentCheckInterval = "override-content-check-interval"
+
+	// NATS configuration
+	FlagNatsEnabled = "nats-enabled"
+	FlagNatsURL     = "nats-url"
 )
 
 // Descriptions for jxscout options
@@ -128,4 +136,8 @@ const (
 	DescriptionCaidoHostname                = "hostname where Caido is running"
 	DescriptionCaidoPort                    = "port where Caido is running"
 	DescriptionOverrideContentCheckInterval = "interval at which to check for changes in override content and update match/replace rules"
+
+	// NATS configuration
+	DescriptionNatsEnabled = "enable pushing AST analysis results to NATS"
+	DescriptionNatsURL     = "the NATS server connection URL"
 )

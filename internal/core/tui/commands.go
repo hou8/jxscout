@@ -188,6 +188,10 @@ func (t *TUI) RegisterDefaultCommands() {
 						currentOptions.OverrideContentCheckInterval = constants.DefaultOverrideContentCheckInterval
 					case constants.FlagASTAnalyzerConcurrency:
 						currentOptions.ASTAnalyzerConcurrency = constants.DefaultASTAnalyzerConcurrency
+					case constants.FlagNatsEnabled:
+						currentOptions.NatsEnabled = constants.DefaultNatsEnabled
+					case constants.FlagNatsURL:
+						currentOptions.NatsURL = constants.DefaultNatsURL
 					default:
 						return nil, fmt.Errorf("unknown option: %s", option)
 					}
@@ -346,6 +350,14 @@ func (t *TUI) RegisterDefaultCommands() {
 						return nil, fmt.Errorf("invalid override-content-check-interval value: %s", value)
 					}
 					currentOptions.OverrideContentCheckInterval = duration
+				case constants.FlagNatsEnabled:
+					enabled, err := strconv.ParseBool(value)
+					if err != nil {
+						return nil, fmt.Errorf("invalid nats-enabled value: %s", value)
+					}
+					currentOptions.NatsEnabled = enabled
+				case constants.FlagNatsURL:
+					currentOptions.NatsURL = value
 				default:
 				}
 			}
@@ -1401,4 +1413,15 @@ func (t *TUI) printCurrentConfig() {
 		constants.FlagOverrideContentCheckInterval,
 		fmt.Sprintf("%v", currentOptions.OverrideContentCheckInterval),
 		descStyle.Render(constants.DescriptionOverrideContentCheckInterval)))
+
+	// NATS configuration
+	t.writeLineToOutput(formatLine(
+		constants.FlagNatsEnabled,
+		fmt.Sprintf("%v", currentOptions.NatsEnabled),
+		descStyle.Render(constants.DescriptionNatsEnabled)))
+
+	t.writeLineToOutput(formatLine(
+		constants.FlagNatsURL,
+		currentOptions.NatsURL,
+		descStyle.Render(constants.DescriptionNatsURL)))
 }
