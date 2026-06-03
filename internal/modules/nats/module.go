@@ -125,7 +125,7 @@ func (m *NatsModule) handleAnalysisCompleted(ctx context.Context, payload []byte
 	for _, match := range rawMatches {
 		results = append(results, NatsMessageResult{
 			Analyzer: match.AnalyzerName,
-			Value:    match.Value,
+			Value:    truncateValue(match.Value),
 			Start:    match.Start,
 			End:      match.End,
 			Tags:     match.Tags,
@@ -162,4 +162,14 @@ func (m *NatsModule) handleAnalysisCompleted(ctx context.Context, payload []byte
 	}
 
 	return nil
+}
+
+const maxRuneLength = 500000
+
+func truncateValue(val string) string {
+	runes := []rune(val)
+	if len(runes) <= maxRuneLength {
+		return val
+	}
+	return string(runes[:maxRuneLength]) + "... [truncated]"
 }
