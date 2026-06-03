@@ -44,6 +44,7 @@ type Options struct {
 	Hostname                         string              `yaml:"hostname"`
 	ProjectName                      string              `yaml:"project-name"`
 	ScopePatterns                    goflags.StringSlice `yaml:"scope"`
+	ScopeExcludePatterns             goflags.StringSlice `yaml:"scope-exclude"`
 	Debug                            bool                `yaml:"debug"`
 	AssetSaveConcurrency             int                 `yaml:"save-concurrency"`
 	AssetFetchConcurrency            int                 `yaml:"fetch-concurrency"`

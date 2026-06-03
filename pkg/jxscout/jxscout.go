@@ -136,8 +136,9 @@ func initJxscout(options jxscouttypes.Options) (*jxscout, error) {
 	logger := initializeLogger(logBuffer, options)
 
 	scopeRegex := initializeScope(options.ScopePatterns)
+	scopeExcludeRegex := initializeScope(options.ScopeExcludePatterns)
 
-	scopeChecker := newScopeChecker(scopeRegex, logger)
+	scopeChecker := newScopeChecker(scopeRegex, scopeExcludeRegex, logger)
 
 	fileService := assetservice.NewFileService(common.GetWorkingDirectory(options.ProjectName), logger)
 
@@ -260,6 +261,9 @@ func (s *jxscout) start() error {
 	if err != nil {
 		return errutil.Wrap(err, "failed to initialize modules")
 	}
+
+	r.Get("/config", s.handleGetConfig)
+	r.Post("/config", s.handleUpdateConfig)
 
 	s.log.Info("starting server", "port", s.options.Port)
 

@@ -122,7 +122,8 @@ func (t *TUI) RegisterDefaultCommands() {
 				t.writeLineToOutput("\n\nTo update options, use: config option=value [option=value ...]")
 				t.writeLineToOutput("To reset an option to default, use: config option=default")
 				t.writeLineToOutput("To manage scope patterns, use: config scope=add:pattern or config scope=remove:pattern\n")
-				t.writeLineToOutput("Example: config project-name=netflix debug=true scope=add:*google.com*")
+				t.writeLineToOutput("To manage scope-exclude patterns, use: config scope-exclude=add:pattern or config scope-exclude=remove:pattern\n")
+				t.writeLineToOutput("Example: config project-name=netflix debug=true scope=add:*google.com* scope-exclude=add:*analytics*")
 				return nil, nil
 			}
 
@@ -154,6 +155,8 @@ func (t *TUI) RegisterDefaultCommands() {
 						currentOptions.ProjectName = constants.DefaultProjectName
 					case constants.FlagScope:
 						currentOptions.ScopePatterns = nil
+					case constants.FlagScopeExclude:
+						currentOptions.ScopeExcludePatterns = nil
 					case constants.FlagDebug:
 						currentOptions.Debug = constants.DefaultDebug
 					case constants.FlagAssetFetchConcurrency:
@@ -236,6 +239,48 @@ func (t *TUI) RegisterDefaultCommands() {
 					} else {
 						// Replace all patterns (original behavior)
 						currentOptions.ScopePatterns = strings.Split(value, ",")
+					}
+					continue
+				}
+
+				// Special handling for scope-exclude patterns
+				if option == constants.FlagScopeExclude {
+					if strings.HasPrefix(value, "add:") {
+						// Add a new pattern
+						pattern := strings.TrimPrefix(value, "add:")
+						if pattern == "" {
+							return nil, fmt.Errorf("empty scope-exclude pattern")
+						}
+						// Check if pattern already exists
+						for _, existing := range currentOptions.ScopeExcludePatterns {
+							if existing == pattern {
+								return nil, fmt.Errorf("scope-exclude pattern already exists: %s", pattern)
+							}
+						}
+						currentOptions.ScopeExcludePatterns = append(currentOptions.ScopeExcludePatterns, pattern)
+					} else if strings.HasPrefix(value, "remove:") {
+						// Remove a pattern
+						pattern := strings.TrimPrefix(value, "remove:")
+						if pattern == "" {
+							return nil, fmt.Errorf("empty scope-exclude pattern")
+						}
+						// Find and remove the pattern
+						found := false
+						newPatterns := make([]string, 0, len(currentOptions.ScopeExcludePatterns))
+						for _, existing := range currentOptions.ScopeExcludePatterns {
+							if existing == pattern {
+								found = true
+								continue
+							}
+							newPatterns = append(newPatterns, existing)
+						}
+						if !found {
+							return nil, fmt.Errorf("scope-exclude pattern not found: %s", pattern)
+						}
+						currentOptions.ScopeExcludePatterns = newPatterns
+					} else {
+						// Replace all patterns (original behavior)
+						currentOptions.ScopeExcludePatterns = strings.Split(value, ",")
 					}
 					continue
 				}
@@ -428,6 +473,9 @@ func (t *TUI) RegisterDefaultCommands() {
 						if !changedOptionsMap[constants.FlagScope] {
 							currentOptions.ScopePatterns = existingOptions.ScopePatterns
 						}
+						if !changedOptionsMap[constants.FlagScopeExclude] {
+							currentOptions.ScopeExcludePatterns = existingOptions.ScopeExcludePatterns
+						}
 						if !changedOptionsMap[constants.FlagDebug] {
 							currentOptions.Debug = existingOptions.Debug
 						}
@@ -525,6 +573,7 @@ func (t *TUI) RegisterDefaultCommands() {
 				Hostname:                         constants.DefaultHostname,
 				ProjectName:                      constants.DefaultProjectName,
 				ScopePatterns:                    nil,
+				ScopeExcludePatterns:             nil,
 				Debug:                            constants.DefaultDebug,
 				AssetSaveConcurrency:             constants.DefaultAssetSaveConcurrency,
 				AssetFetchConcurrency:            constants.DefaultAssetFetchConcurrency,
@@ -1324,6 +1373,16 @@ func (t *TUI) printCurrentConfig() {
 		constants.FlagScope,
 		scopeValue,
 		descStyle.Render(constants.DescriptionScope)))
+
+	scopeExcludeValue := strings.Join(currentOptions.ScopeExcludePatterns, ",")
+	if len(scopeExcludeValue) == 0 {
+		scopeExcludeValue = "<empty>"
+	}
+
+	t.writeLineToOutput(formatLine(
+		constants.FlagScopeExclude,
+		scopeExcludeValue,
+		descStyle.Render(constants.DescriptionScopeExclude)))
 
 	t.writeLineToOutput(formatLine(
 		constants.FlagDebug,

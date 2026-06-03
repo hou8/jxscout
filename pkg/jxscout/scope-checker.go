@@ -9,39 +9,54 @@ import (
 )
 
 type scopeChecker struct {
-	scope []string
-	log   *slog.Logger
+	scope        []string
+	scopeExclude []string
+	log          *slog.Logger
 }
 
-func newScopeChecker(scope []string, log *slog.Logger) jxscouttypes.Scope {
+func newScopeChecker(scope []string, scopeExclude []string, log *slog.Logger) jxscouttypes.Scope {
 	return &scopeChecker{
-		scope: scope,
-		log:   log,
+		scope:        scope,
+		scopeExclude: scopeExclude,
+		log:          log,
 	}
 }
 
 func (s *scopeChecker) IsInScope(url string) bool {
-	if len(s.scope) == 0 {
+	normalizedURL := common.NormalizeURL(url)
+
+	matchesList := func(patterns []string) bool {
+		for _, regex := range patterns {
+			match, err := regexp.Match(regex, []byte(normalizedURL))
+			if err != nil {
+				s.log.Error("failed to match regex", "regex", regex, "url", normalizedURL, "err", err)
+				continue
+			}
+
+			if match {
+				return true
+			}
+		}
+		return false
+	}
+
+	hasWhite := len(s.scope) > 0
+	hasBlack := len(s.scopeExclude) > 0
+
+	if !hasWhite && !hasBlack {
 		return true
 	}
 
-	normalizedURL := common.NormalizeURL(url)
-
-	for _, regex := range s.scope {
-		match, err := regexp.Match(regex, []byte(normalizedURL))
-		if err != nil {
-			s.log.Error("failed to match regex", "regex", regex, "url", normalizedURL, "err", err)
-			return false
-		}
-
-		if match {
-			return true
-		}
-
-		s.log.Debug("request didn't match regex", "regex", regex, "url", normalizedURL)
+	if hasBlack && matchesList(s.scopeExclude) {
+		s.log.Debug("request matched exclude regex, filtering out of scope", "url", normalizedURL)
+		return false
 	}
 
-	return false
+	if hasWhite {
+		return matchesList(s.scope)
+	}
+
+	return true
 }
 
 func initializeScope(patterns []string) []string {

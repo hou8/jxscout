@@ -59,6 +59,7 @@ const (
 	// Jxscout configuration
 	FlagProjectName = "project-name"
 	FlagScope       = "scope"
+	FlagScopeExclude = "scope-exclude"
 	FlagDebug       = "debug"
 
 	// Concurrency configuration
@@ -105,6 +106,7 @@ const (
 	// Jxscout configuration
 	DescriptionProjectName = "name of your project folder where downloaded files will be stored"
 	DescriptionScope       = "comma-separated list of patterns to filter requests (e.g. *google*,*youtube*)"
+	DescriptionScopeExclude = "comma-separated list of patterns to exclude requests (e.g. *analytics*,*metrics*)"
 	DescriptionDebug       = "turn on detailed logs for troubleshooting"
 
 	// Concurrency configuration

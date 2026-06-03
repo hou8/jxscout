@@ -29,6 +29,7 @@ func main() {
 	flagSet.CreateGroup("jxscout", "jxscout configuration",
 		flagSet.StringVar(&options.ProjectName, constants.FlagProjectName, constants.DefaultProjectName, constants.DescriptionProjectName),
 		flagSet.StringSliceVar(&options.ScopePatterns, constants.FlagScope, nil, constants.DescriptionScope, goflags.FileCommaSeparatedStringSliceOptions),
+		flagSet.StringSliceVar(&options.ScopeExcludePatterns, constants.FlagScopeExclude, nil, constants.DescriptionScopeExclude, goflags.FileCommaSeparatedStringSliceOptions),
 		flagSet.BoolVar(&options.Debug, constants.FlagDebug, constants.DefaultDebug, constants.DescriptionDebug),
 	)
 
