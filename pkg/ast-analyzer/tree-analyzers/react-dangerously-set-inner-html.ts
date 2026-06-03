@@ -2,7 +2,7 @@ import { Node } from "acorn";
 import { Analyzer, AnalyzerMatch, AnalyzerParams } from "../types";
 import { Visitor } from "../walker";
 
-export const DANGEROUS_HTML_ANALYZER_NAME = "dangerouslySetInnerHTML";
+export const DANGEROUS_HTML_ANALYZER_NAME = "dom-sinks";
 
 const dangerousHtmlAnalyzerBuilder = (
   args: AnalyzerParams,

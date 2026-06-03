@@ -1,7 +1,7 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/session-storage/files/1.js",
-    "analyzerName": "session-storage",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/session-storage/files/1.js",
+    "analyzerName": "web-storage",
     "value": "sessionStorage.getItem('key')",
     "start": {
       "line": 3,
@@ -17,8 +17,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/session-storage/files/1.js",
-    "analyzerName": "session-storage",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/session-storage/files/1.js",
+    "analyzerName": "web-storage",
     "value": "sessionStorage.setItem('key', 'value')",
     "start": {
       "line": 2,
@@ -34,8 +34,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/session-storage/files/1.js",
-    "analyzerName": "session-storage",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/session-storage/files/1.js",
+    "analyzerName": "web-storage",
     "value": "window.sessionStorage.getItem('key2')",
     "start": {
       "line": 7,
@@ -51,8 +51,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/session-storage/files/1.js",
-    "analyzerName": "session-storage",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/session-storage/files/1.js",
+    "analyzerName": "web-storage",
     "value": "window.sessionStorage.setItem('key2', 'value2')",
     "start": {
       "line": 6,

@@ -34,3 +34,4 @@ const notHostname9 = 'example.com:8080'; // Port number
 const notHostname10 = 'http://example.com'; // URL scheme 
 const notHostname11 = 'abc.svg';
 const notHostname12 = 'react.lazy';
+const notHostname13 = 'button-group.vue';

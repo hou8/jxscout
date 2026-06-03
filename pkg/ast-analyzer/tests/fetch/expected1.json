@@ -1,7 +1,23 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/fetch/files/1.js",
-    "analyzerName": "fetch",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/fetch/files/1.js",
+    "analyzerName": "http-requests",
+    "value": "{\n  method: 'POST',\n  headers: {\n    'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({ key: 'value' })\n}",
+    "start": {
+      "line": 5,
+      "column": 38
+    },
+    "end": {
+      "line": 11,
+      "column": 1
+    },
+    "tags": {
+      "fetch-options": true
+    }
+  },
+  {
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/fetch/files/1.js",
+    "analyzerName": "http-requests",
     "value": "fetch('https://api.example.com/data', {\n  method: 'POST',\n  headers: {\n    'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({ key: 'value' })\n})",
     "start": {
       "line": 5,
@@ -16,8 +32,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/fetch/files/1.js",
-    "analyzerName": "fetch",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/fetch/files/1.js",
+    "analyzerName": "http-requests",
     "value": "fetch('https://api.example.com/data')",
     "start": {
       "line": 2,
@@ -32,8 +48,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/fetch/files/1.js",
-    "analyzerName": "fetch",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/fetch/files/1.js",
+    "analyzerName": "http-requests",
     "value": "fetch('https://api.example.com/data')",
     "start": {
       "line": 23,
@@ -48,8 +64,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/fetch/files/1.js",
-    "analyzerName": "fetch",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/fetch/files/1.js",
+    "analyzerName": "http-requests",
     "value": "fetch(`https://api.example.com/${endpoint}`)",
     "start": {
       "line": 19,
@@ -64,8 +80,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/fetch/files/1.js",
-    "analyzerName": "fetch",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/fetch/files/1.js",
+    "analyzerName": "http-requests",
     "value": "fetch(url)",
     "start": {
       "line": 15,

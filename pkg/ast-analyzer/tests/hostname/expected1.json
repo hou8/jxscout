@@ -1,6 +1,6 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
     "analyzerName": "hostname",
     "value": "'123domain.com'",
     "start": {
@@ -19,7 +19,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
     "analyzerName": "hostname",
     "value": "'a1-b2-c3.example.com'",
     "start": {
@@ -38,7 +38,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
     "analyzerName": "hostname",
     "value": "'domain123.com'",
     "start": {
@@ -57,7 +57,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
     "analyzerName": "hostname",
     "value": "'example.com'",
     "start": {
@@ -76,7 +76,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
     "analyzerName": "hostname",
     "value": "'example.io'",
     "start": {
@@ -95,7 +95,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
     "analyzerName": "hostname",
     "value": "'example.net'",
     "start": {
@@ -114,7 +114,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
     "analyzerName": "hostname",
     "value": "'example.org'",
     "start": {
@@ -133,7 +133,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
     "analyzerName": "hostname",
     "value": "'my-domain.com'",
     "start": {
@@ -152,7 +152,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
     "analyzerName": "hostname",
     "value": "'sub-domain.example.com'",
     "start": {
@@ -171,7 +171,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
     "analyzerName": "hostname",
     "value": "'sub.example.com'",
     "start": {
@@ -190,7 +190,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
     "analyzerName": "hostname",
     "value": "'sub.sub.example.com'",
     "start": {
@@ -209,7 +209,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
     "analyzerName": "hostname",
     "value": "'sub123.example.com'",
     "start": {
@@ -228,7 +228,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/hostname/files/1.js",
     "analyzerName": "hostname",
     "value": "'test-123.example.com'",
     "start": {

@@ -2,7 +2,7 @@ import { Node, MemberExpression } from "acorn";
 import { Analyzer, AnalyzerMatch, AnalyzerParams } from "../types";
 import { Visitor } from "../walker";
 
-export const LOCAL_STORAGE_ANALYZER_NAME = "local-storage";
+export const LOCAL_STORAGE_ANALYZER_NAME = "web-storage";
 
 const localStorageAnalyzerBuilder = (
   args: AnalyzerParams,

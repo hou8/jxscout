@@ -2,7 +2,7 @@ import { Node } from "acorn";
 import { Analyzer, AnalyzerMatch, AnalyzerParams } from "../types";
 import { Visitor } from "../walker";
 
-export const FETCH_ANALYZER_NAME = "fetch";
+export const FETCH_ANALYZER_NAME = "http-requests";
 
 const fetchAnalyzerBuilder = (
   args: AnalyzerParams,

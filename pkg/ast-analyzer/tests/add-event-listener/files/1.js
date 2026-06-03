@@ -25,3 +25,20 @@ button?.addEventListener('mouseover', () => {
 addEventListener('click', () => {
   console.log('clicked');
 });
+
+// Custom events that should be captured
+document.addEventListener('my-custom-event', () => {
+  console.log('custom event triggered');
+});
+
+window.addEventListener('UserLoginSuccess', () => {
+  console.log('login successful');
+});
+
+// Important browser events that should still be captured
+window.addEventListener('message', () => {
+  console.log('message received');
+});
+window.addEventListener('hashchange', () => {
+  console.log('hash changed');
+});

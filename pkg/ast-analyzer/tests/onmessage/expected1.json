@@ -1,7 +1,7 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/onmessage/files/1.js",
-    "analyzerName": "onmessage",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/onmessage/files/1.js",
+    "analyzerName": "web-messaging",
     "value": "window.addEventListener('message', function(event) {\n  console.log('Message received via addEventListener:', event.data);\n})",
     "start": {
       "line": 7,
@@ -16,8 +16,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/onmessage/files/1.js",
-    "analyzerName": "onmessage",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/onmessage/files/1.js",
+    "analyzerName": "web-messaging",
     "value": "window.onmessage = function(event) {\n  console.log('Message received:', event.data);\n}",
     "start": {
       "line": 2,

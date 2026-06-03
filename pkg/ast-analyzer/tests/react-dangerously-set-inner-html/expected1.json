@@ -1,7 +1,7 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
-    "analyzerName": "dangerouslySetInnerHTML",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "{\n    dangerouslySetInnerHTML: {\n      __html: '<div>Nested content</div>'\n    }\n  }",
     "start": {
       "line": 48,
@@ -16,8 +16,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
-    "analyzerName": "dangerouslySetInnerHTML",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "{\n  className: 'content',\n  dangerouslySetInnerHTML: {\n    __html: '<div>Content with other props</div>'\n  },\n  onClick: () => console.log('clicked')\n}",
     "start": {
       "line": 9,
@@ -32,8 +32,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
-    "analyzerName": "dangerouslySetInnerHTML",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "{\n  dangerouslySetInnerHTML: {\n    __html: '<div>Base content</div>'\n  }\n}",
     "start": {
       "line": 64,
@@ -48,8 +48,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
-    "analyzerName": "dangerouslySetInnerHTML",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "{\n  dangerouslySetInnerHTML: {\n    __html: '<p>First content</p>'\n  }\n}",
     "start": {
       "line": 18,
@@ -64,8 +64,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
-    "analyzerName": "dangerouslySetInnerHTML",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "{\n  dangerouslySetInnerHTML: {\n    __html: '<span>Hello World</span>'\n  }\n}",
     "start": {
       "line": 2,
@@ -80,8 +80,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
-    "analyzerName": "dangerouslySetInnerHTML",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "{\n  dangerouslySetInnerHTML: {\n    __html: '<strong>Second content</strong>'\n  }\n}",
     "start": {
       "line": 24,
@@ -96,8 +96,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
-    "analyzerName": "dangerouslySetInnerHTML",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "{\n  dangerouslySetInnerHTML: {\n    __html: `<p>Hello ${name}</p>`\n  }\n}",
     "start": {
       "line": 40,
@@ -112,8 +112,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
-    "analyzerName": "dangerouslySetInnerHTML",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/react-dangerously-set-inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "{\n  dangerouslySetInnerHTML: {\n    __html: userContent\n  }\n}",
     "start": {
       "line": 32,

@@ -1,6 +1,6 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/eval/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/eval/files/1.js",
     "analyzerName": "eval",
     "value": "eval('console.log(\"Hello\")')",
     "start": {
@@ -12,11 +12,12 @@
       "column": 28
     },
     "tags": {
-      "eval": true
+      "eval": true,
+      "eval-type-eval": true
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/eval/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/eval/files/1.js",
     "analyzerName": "eval",
     "value": "eval('console.log(\"One\")', 'console.log(\"Two\")')",
     "start": {
@@ -28,11 +29,12 @@
       "column": 48
     },
     "tags": {
-      "eval": true
+      "eval": true,
+      "eval-type-eval": true
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/eval/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/eval/files/1.js",
     "analyzerName": "eval",
     "value": "eval(`console.log(\"Hello ${name}\")`)",
     "start": {
@@ -44,11 +46,12 @@
       "column": 36
     },
     "tags": {
-      "eval": true
+      "eval": true,
+      "eval-type-eval": true
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/eval/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/eval/files/1.js",
     "analyzerName": "eval",
     "value": "eval(code)",
     "start": {
@@ -60,11 +63,12 @@
       "column": 10
     },
     "tags": {
-      "eval": true
+      "eval": true,
+      "eval-type-eval": true
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/eval/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/eval/files/1.js",
     "analyzerName": "eval",
     "value": "eval(getCode())",
     "start": {
@@ -76,11 +80,12 @@
       "column": 15
     },
     "tags": {
-      "eval": true
+      "eval": true,
+      "eval-type-eval": true
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/eval/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/eval/files/1.js",
     "analyzerName": "eval",
     "value": "eval(obj.code)",
     "start": {
@@ -92,7 +97,8 @@
       "column": 14
     },
     "tags": {
-      "eval": true
+      "eval": true,
+      "eval-type-eval": true
     }
   }
 ]

@@ -2,7 +2,7 @@ import { Node, MemberExpression } from "acorn";
 import { Analyzer, AnalyzerMatch, AnalyzerParams } from "../types";
 import { Visitor } from "../walker";
 
-export const SESSION_STORAGE_ANALYZER_NAME = "session-storage";
+export const SESSION_STORAGE_ANALYZER_NAME = "web-storage";
 
 const sessionStorageAnalyzerBuilder = (
   args: AnalyzerParams,

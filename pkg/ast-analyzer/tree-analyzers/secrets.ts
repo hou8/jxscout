@@ -5787,7 +5787,8 @@ const EXCLUSION_PATTERNS = [
   /^application\/(json|javascript|xml|x-www-form-urlencoded)$/,
   /^text\/(html|plain|css|javascript)$/,
   /^https?:\/\/[a-zA-Z0-9.-]+$/,
-  /^image\/[a-zA-Z0-9.+-]+$/
+  /^image\/[a-zA-Z0-9.+-]+$/,
+  /^data:image\//
 ];
 
 export const SECRETS_ANALYZER_NAME = "secrets";

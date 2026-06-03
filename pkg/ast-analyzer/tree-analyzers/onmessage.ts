@@ -2,7 +2,7 @@ import { Node } from "acorn";
 import { Analyzer, AnalyzerMatch, AnalyzerParams } from "../types";
 import { Visitor } from "../walker";
 
-export const ONMESSAGE_ANALYZER_NAME = "onmessage";
+export const ONMESSAGE_ANALYZER_NAME = "web-messaging";
 
 const onmessageAnalyzerBuilder = (
   args: AnalyzerParams,

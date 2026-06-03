@@ -1,6 +1,6 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.hash",
     "start": {
@@ -18,7 +18,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.host",
     "start": {
@@ -36,7 +36,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.host",
     "start": {
@@ -54,7 +54,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.href",
     "start": {
@@ -72,7 +72,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.href",
     "start": {
@@ -90,7 +90,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.href = \"https://example.com\"",
     "start": {
@@ -108,7 +108,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.href = \"https://example.com\"",
     "start": {
@@ -126,7 +126,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.href = \"https://other.com\"",
     "start": {
@@ -144,7 +144,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.href = \"https://secure.com\"",
     "start": {
@@ -162,7 +162,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.href = \"https://upgrade.com\"",
     "start": {
@@ -180,7 +180,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.href = `https://example${i}.com`",
     "start": {
@@ -198,7 +198,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.href = url",
     "start": {
@@ -216,7 +216,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.href = url",
     "start": {
@@ -234,7 +234,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.href = url",
     "start": {
@@ -252,7 +252,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.pathname",
     "start": {
@@ -270,7 +270,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.pathname",
     "start": {
@@ -288,7 +288,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.protocol",
     "start": {
@@ -306,7 +306,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.protocol",
     "start": {
@@ -324,7 +324,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.protocol",
     "start": {
@@ -342,7 +342,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "location.search",
     "start": {
@@ -360,7 +360,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "window.location.hash",
     "start": {
@@ -378,7 +378,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "window.location.host",
     "start": {
@@ -396,7 +396,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "window.location.href",
     "start": {
@@ -414,7 +414,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "window.location.href = \"https://example.com\"",
     "start": {
@@ -432,7 +432,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "window.location.href = url",
     "start": {
@@ -450,7 +450,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "window.location.href = url",
     "start": {
@@ -468,7 +468,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "window.location.href = url",
     "start": {
@@ -486,7 +486,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "window.location.pathname",
     "start": {
@@ -504,7 +504,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "window.location.protocol",
     "start": {
@@ -522,7 +522,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/location/files/1.js",
     "analyzerName": "location",
     "value": "window.location.search",
     "start": {

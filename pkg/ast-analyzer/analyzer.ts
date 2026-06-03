@@ -2,7 +2,6 @@ import fs from "fs";
 import { ParseResult, parseSync } from "oxc-parser";
 import { ancestors as traverse } from "./walker";
 import { AnalyzerParams, AnalyzerMatch } from "./types";
-import { regexAnalyzerBuilder } from "./tree-analyzers/regex-pattern";
 import { graphqlAnalyzerBuilder } from "./tree-analyzers/graphql";
 import { secretsAnalyzerBuilder } from "./tree-analyzers/secrets";
 import { addEventListenerAnalyzerBuilder } from "./tree-analyzers/add-event-listener";
@@ -25,7 +24,6 @@ import { robustPathsAnalyzerBuilder } from "./tree-analyzers/robust-paths";
 import { windowNameAnalyzerBuilder } from "./tree-analyzers/window-name";
 import { windowOpenAnalyzerBuilder } from "./tree-analyzers/window-open";
 import { dangerousHtmlAnalyzerBuilder } from "./tree-analyzers/react-dangerously-set-inner-html";
-import { httpMethodsAnalyzerBuilder } from "./tree-analyzers/http-methods";
 import { cryptoAnalyzerBuilder } from "./tree-analyzers/crypto";
 
 export function parseFile(filePath: string): AnalyzerParams {
@@ -93,15 +91,42 @@ export type AnalyzerType =
   | "location"
   | "onhashchange"
   | "onmessage"
-  | "regex-pattern"
   | "url-search-params"
   | "paths"
   | "robust-paths"
   | "window-name"
   | "window-open"
   | "dangerous-html"
-  | "http-methods"
-  | "crypto";
+  | "crypto"
+  | "dom-sinks"
+  | "http-requests"
+  | "endpoints"
+  | "web-messaging"
+  | "web-storage";
+
+const OLD_TO_NEW_MAP: Record<string, string> = {
+  // DOM Sinks
+  "inner-html": "dom-sinks",
+  "dangerous-html": "dom-sinks",
+  
+  // HTTP Requests
+  "fetch": "http-requests",
+  "fetch-options": "http-requests",
+  
+  // Endpoints
+  "robust-paths": "endpoints",
+  
+  // Regex
+  "regex-match": "regex",
+  
+  // Web Messaging
+  "postmessage": "web-messaging",
+  "onmessage": "web-messaging",
+  
+  // Web Storage
+  "local-storage": "web-storage",
+  "session-storage": "web-storage"
+};
 
 export function analyzeFile(
   filePath: string,
@@ -118,17 +143,19 @@ export function analyzeFile(
     type: AnalyzerType,
     builder: (args: AnalyzerParams, results: AnalyzerMatch[]) => T
   ): T | null => {
-    if (analyzersToRun && !analyzersToRun.includes(type)) {
-      return null;
+    if (analyzersToRun) {
+      const mappedRunList = analyzersToRun.map(t => OLD_TO_NEW_MAP[t] || t);
+      if (!mappedRunList.includes(type)) {
+        return null;
+      }
     }
     return builder(args, results);
   };
 
   const postMessageAnalyzer = createAnalyzer(
-    "postmessage",
+    "web-messaging",
     postmessageAnalyzerBuilder
   );
-  const regexAnalyzer = createAnalyzer("regex", regexAnalyzerBuilder);
   const graphqlAnalyzer = createAnalyzer("graphql", graphqlAnalyzerBuilder);
   const secretsAnalyzer = createAnalyzer("secrets", secretsAnalyzerBuilder);
   const addEventListenerAnalyzer = createAnalyzer(
@@ -142,21 +169,21 @@ export function analyzeFile(
   );
   const evalAnalyzer = createAnalyzer("eval", evalAnalyzerBuilder);
   const fetchOptionsAnalyzer = createAnalyzer(
-    "fetch-options",
+    "http-requests",
     fetchOptionsAnalyzerBuilder
   );
-  const fetchAnalyzer = createAnalyzer("fetch", fetchAnalyzerBuilder);
+  const fetchAnalyzer = createAnalyzer("http-requests", fetchAnalyzerBuilder);
   const hostnameAnalyzer = createAnalyzer("hostname", hostnameAnalyzerBuilder);
   const innerHtmlAnalyzer = createAnalyzer(
-    "inner-html",
+    "dom-sinks",
     innerHtmlAnalyzerBuilder
   );
   const localStorageAnalyzer = createAnalyzer(
-    "local-storage",
+    "web-storage",
     localStorageAnalyzerBuilder
   );
   const sessionStorageAnalyzer = createAnalyzer(
-    "session-storage",
+    "web-storage",
     sessionStorageAnalyzerBuilder
   );
   const locationAnalyzer = createAnalyzer("location", locationAnalyzerBuilder);
@@ -165,11 +192,11 @@ export function analyzeFile(
     onhashchangeAnalyzerBuilder
   );
   const onmessageAnalyzer = createAnalyzer(
-    "onmessage",
+    "web-messaging",
     onmessageAnalyzerBuilder
   );
   const regexMatchAnalyzer = createAnalyzer(
-    "regex-match",
+    "regex",
     regexMatchAnalyzerBuilder
   );
 
@@ -178,7 +205,7 @@ export function analyzeFile(
     urlSearchParamsAnalyzerBuilder
   );
   const robustPathsAnalyzer = createAnalyzer(
-    "robust-paths",
+    "endpoints",
     robustPathsAnalyzerBuilder
   );
   const windowNameAnalyzer = createAnalyzer(
@@ -190,25 +217,19 @@ export function analyzeFile(
     windowOpenAnalyzerBuilder
   );
   const dangerousHtmlAnalyzer = createAnalyzer(
-    "dangerous-html",
+    "dom-sinks",
     dangerousHtmlAnalyzerBuilder
-  );
-  const httpMethodsAnalyzer = createAnalyzer(
-    "http-methods",
-    httpMethodsAnalyzerBuilder
   );
   const cryptoAnalyzer = createAnalyzer("crypto", cryptoAnalyzerBuilder);
 
   traverse(args.source, args.ast, {
     Literal(node, ancestors) {
-      regexAnalyzer?.Literal?.(node, ancestors);
       graphqlAnalyzer?.Literal?.(node, ancestors);
       secretsAnalyzer?.Literal?.(node, ancestors);
       hostnameAnalyzer?.Literal?.(node, ancestors);
       robustPathsAnalyzer?.Literal?.(node, ancestors);
     },
     NewExpression(node, ancestors) {
-      regexAnalyzer?.NewExpression?.(node, ancestors);
       urlSearchParamsAnalyzer?.NewExpression?.(node, ancestors);
     },
     TemplateLiteral(node, ancestors) {
@@ -233,7 +254,6 @@ export function analyzeFile(
       regexMatchAnalyzer?.CallExpression?.(node, ancestors);
       windowOpenAnalyzer?.CallExpression?.(node, ancestors);
       robustPathsAnalyzer?.CallExpression?.(node, ancestors);
-      httpMethodsAnalyzer?.CallExpression?.(node, ancestors);
     },
     AssignmentExpression(node, ancestors) {
       postMessageAnalyzer?.AssignmentExpression?.(node, ancestors);

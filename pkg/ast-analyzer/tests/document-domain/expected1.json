@@ -1,6 +1,6 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
     "analyzerName": "document-domain",
     "value": "document.domain",
     "start": {
@@ -16,7 +16,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
     "analyzerName": "document-domain",
     "value": "document.domain",
     "start": {
@@ -32,7 +32,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
     "analyzerName": "document-domain",
     "value": "document.domain",
     "start": {
@@ -48,7 +48,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
     "analyzerName": "document-domain",
     "value": "document.domain",
     "start": {
@@ -64,7 +64,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
     "analyzerName": "document-domain",
     "value": "document.domain",
     "start": {
@@ -80,7 +80,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
     "analyzerName": "document-domain",
     "value": "document.domain = \"example.com\"",
     "start": {
@@ -96,7 +96,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
     "analyzerName": "document-domain",
     "value": "document.domain = \"sub.\" + \"domain.com\"",
     "start": {
@@ -112,7 +112,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
     "analyzerName": "document-domain",
     "value": "document.domain = `${subdomain}.example.com`",
     "start": {
@@ -128,7 +128,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
     "analyzerName": "document-domain",
     "value": "document.domain = domain",
     "start": {
@@ -144,7 +144,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/document-domain/files/1.js",
     "analyzerName": "document-domain",
     "value": "document.domain = getDomain()",
     "start": {

@@ -1,57 +1,23 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/add-event-listener/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/add-event-listener/files/1.js",
     "analyzerName": "add-event-listener",
-    "value": "addEventListener('click', () => {\n  console.log('clicked');\n})",
+    "value": "document.addEventListener('my-custom-event', () => {\n  console.log('custom event triggered');\n})",
     "start": {
-      "line": 25,
+      "line": 30,
       "column": 0
     },
     "end": {
-      "line": 27,
+      "line": 32,
       "column": 2
     },
     "tags": {
       "event-listener": true,
-      "event-type-click": true
+      "event-type-my-custom-event": true
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/add-event-listener/files/1.js",
-    "analyzerName": "add-event-listener",
-    "value": "button?.addEventListener('mouseover', () => {\n  console.log('mouseover');\n})",
-    "start": {
-      "line": 21,
-      "column": 0
-    },
-    "end": {
-      "line": 23,
-      "column": 2
-    },
-    "tags": {
-      "event-listener": true,
-      "event-type-mouseover": true
-    }
-  },
-  {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/add-event-listener/files/1.js",
-    "analyzerName": "add-event-listener",
-    "value": "document.addEventListener('click', () => {\n  console.log('clicked');\n})",
-    "start": {
-      "line": 4,
-      "column": 0
-    },
-    "end": {
-      "line": 6,
-      "column": 2
-    },
-    "tags": {
-      "event-listener": true,
-      "event-type-click": true
-    }
-  },
-  {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/add-event-listener/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/add-event-listener/files/1.js",
     "analyzerName": "add-event-listener",
     "value": "document.addEventListener(eventType, () => {\n  console.log('scrolled');\n})",
     "start": {
@@ -68,20 +34,54 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/add-event-listener/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/add-event-listener/files/1.js",
     "analyzerName": "add-event-listener",
-    "value": "window.addEventListener('resize', () => {\n  console.log('resized');\n}, { once: true })",
+    "value": "window.addEventListener('hashchange', () => {\n  console.log('hash changed');\n})",
     "start": {
-      "line": 9,
+      "line": 42,
       "column": 0
     },
     "end": {
-      "line": 11,
-      "column": 18
+      "line": 44,
+      "column": 2
     },
     "tags": {
       "event-listener": true,
-      "event-type-resize": true
+      "event-type-hashchange": true
+    }
+  },
+  {
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/add-event-listener/files/1.js",
+    "analyzerName": "add-event-listener",
+    "value": "window.addEventListener('message', () => {\n  console.log('message received');\n})",
+    "start": {
+      "line": 39,
+      "column": 0
+    },
+    "end": {
+      "line": 41,
+      "column": 2
+    },
+    "tags": {
+      "event-listener": true,
+      "event-type-message": true
+    }
+  },
+  {
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/add-event-listener/files/1.js",
+    "analyzerName": "add-event-listener",
+    "value": "window.addEventListener('UserLoginSuccess', () => {\n  console.log('login successful');\n})",
+    "start": {
+      "line": 34,
+      "column": 0
+    },
+    "end": {
+      "line": 36,
+      "column": 2
+    },
+    "tags": {
+      "event-listener": true,
+      "event-type-UserLoginSuccess": true
     }
   }
 ]

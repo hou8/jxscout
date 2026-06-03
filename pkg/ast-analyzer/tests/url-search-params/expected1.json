@@ -1,6 +1,6 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/url-search-params/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/url-search-params/files/1.js",
     "analyzerName": "url-search-params",
     "value": "new URLSearchParams('?query=value')",
     "start": {
@@ -16,7 +16,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/url-search-params/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/url-search-params/files/1.js",
     "analyzerName": "url-search-params",
     "value": "new URLSearchParams([['key', 'value']])",
     "start": {
@@ -32,7 +32,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/url-search-params/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/url-search-params/files/1.js",
     "analyzerName": "url-search-params",
     "value": "new URLSearchParams({ key: 'value' })",
     "start": {

@@ -2,7 +2,7 @@ import { Node } from "acorn";
 import { Analyzer, AnalyzerMatch, AnalyzerParams } from "../types";
 import { Visitor } from "../walker";
 
-export const FETCH_OPTIONS_ANALYZER_NAME = "fetch-options";
+export const FETCH_OPTIONS_ANALYZER_NAME = "http-requests";
 
 // Common fetch option properties
 const FETCH_OPTION_PROPERTIES = ["method", "headers", "body"];

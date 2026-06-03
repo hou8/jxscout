@@ -26,29 +26,40 @@ func TestFormatMatchesV1(t *testing.T) {
 					FilePath:     "test.go",
 					AnalyzerName: "test",
 					Value:        "/api/users",
-					Tags:         map[string]bool{"paths": true},
+					Tags:         map[string]bool{"is-path-only": true},
 				},
 			},
 			expected: []ASTAnalyzerTreeNode{
 				{
-					Label:    "Data",
-					IconName: "folder",
-					Type:     ASTAnalyzerTreeNodeTypeNavigation,
+					Label:       "Data",
+					Description: "[1]",
+					IconName:    "resources:data",
+					Type:        ASTAnalyzerTreeNodeTypeNavigation,
 					Children: []ASTAnalyzerTreeNode{
 						{
-							Label:    "Paths",
-							IconName: "folder",
-							Type:     ASTAnalyzerTreeNodeTypeNavigation,
+							Label:       "Paths",
+							Description: "[1]",
+							IconName:    "resources:path",
+							Type:        ASTAnalyzerTreeNodeTypeNavigation,
 							Children: []ASTAnalyzerTreeNode{
 								{
-									Type:        ASTAnalyzerTreeNodeTypeMatch,
-									Label:       "/api/users",
-									Description: "test.go",
-									Data: AnalyzerMatch{
-										FilePath:     "test.go",
-										AnalyzerName: "test",
-										Value:        "/api/users",
-										Tags:         map[string]bool{"paths": true},
+									Label:       "Paths",
+									Description: "[1]",
+									IconName:    "resources:path",
+									Type:        ASTAnalyzerTreeNodeTypeNavigation,
+									Children: []ASTAnalyzerTreeNode{
+										{
+											Type:        ASTAnalyzerTreeNodeTypeMatch,
+											Label:       "/api/users",
+											Description: "",
+											IconName:    "resources:path",
+											Data: AnalyzerMatch{
+												FilePath:     "test.go",
+												AnalyzerName: "test",
+												Value:        "/api/users",
+												Tags:         map[string]bool{"is-path-only": true},
+											},
+										},
 									},
 								},
 							},
@@ -64,34 +75,38 @@ func TestFormatMatchesV1(t *testing.T) {
 					FilePath:     "test.go",
 					AnalyzerName: "test",
 					Value:        "asd.js",
-					Tags:         map[string]bool{"extension": true, "js": true},
+					Tags:         map[string]bool{"is-extension": true, "extension-js": true},
 				},
 			},
 			expected: []ASTAnalyzerTreeNode{
 				{
-					Label:    "Data",
-					IconName: "folder",
-					Type:     ASTAnalyzerTreeNodeTypeNavigation,
+					Label:       "Data",
+					Description: "[1]",
+					IconName:    "resources:data",
+					Type:        ASTAnalyzerTreeNodeTypeNavigation,
 					Children: []ASTAnalyzerTreeNode{
 						{
-							Label:    "Extension",
-							IconName: "folder",
-							Type:     ASTAnalyzerTreeNodeTypeNavigation,
+							Label:       "Extensions",
+							Description: "[1]",
+							IconName:    "resources:extension",
+							Type:        ASTAnalyzerTreeNodeTypeNavigation,
 							Children: []ASTAnalyzerTreeNode{
 								{
-									Label:    "Js",
-									IconName: "folder",
-									Type:     ASTAnalyzerTreeNodeTypeNavigation,
+									Label:       "js",
+									Description: "[1]",
+									IconName:    "resources:extension",
+									Type:        ASTAnalyzerTreeNodeTypeNavigation,
 									Children: []ASTAnalyzerTreeNode{
 										{
 											Type:        ASTAnalyzerTreeNodeTypeMatch,
 											Label:       "asd.js",
-											Description: "test.go",
+											Description: "",
+											IconName:    "resources:extension",
 											Data: AnalyzerMatch{
 												FilePath:     "test.go",
 												AnalyzerName: "test",
 												Value:        "asd.js",
-												Tags:         map[string]bool{"extension": true, "js": true},
+												Tags:         map[string]bool{"extension-js": true, "is-extension": true},
 											},
 										},
 									},
@@ -109,29 +124,40 @@ func TestFormatMatchesV1(t *testing.T) {
 					FilePath:     "test.go",
 					AnalyzerName: "test",
 					Value:        "window.postMessage",
-					Tags:         map[string]bool{"post-message": true},
+					Tags:         map[string]bool{"postMessage": true},
 				},
 			},
 			expected: []ASTAnalyzerTreeNode{
 				{
-					Label:    "Iframe Communication",
-					IconName: "folder",
-					Type:     ASTAnalyzerTreeNodeTypeNavigation,
+					Label:       "Client Behavior",
+					Description: "[1]",
+					IconName:    "resources:javascript",
+					Type:        ASTAnalyzerTreeNodeTypeNavigation,
 					Children: []ASTAnalyzerTreeNode{
 						{
-							Label:    "Post Message",
-							IconName: "folder",
-							Type:     ASTAnalyzerTreeNodeTypeNavigation,
+							Label:       "Events",
+							Description: "[1]",
+							IconName:    "resources:event",
+							Type:        ASTAnalyzerTreeNodeTypeNavigation,
 							Children: []ASTAnalyzerTreeNode{
 								{
-									Type:        ASTAnalyzerTreeNodeTypeMatch,
-									Label:       "window.postMessage",
-									Description: "test.go",
-									Data: AnalyzerMatch{
-										FilePath:     "test.go",
-										AnalyzerName: "test",
-										Value:        "window.postMessage",
-										Tags:         map[string]bool{"post-message": true},
+									Label:       "postMessage",
+									Description: "[1]",
+									IconName:    "resources:postmessage",
+									Type:        ASTAnalyzerTreeNodeTypeNavigation,
+									Children: []ASTAnalyzerTreeNode{
+										{
+											Type:        ASTAnalyzerTreeNodeTypeMatch,
+											Label:       "window.postMessage",
+											Description: "",
+											IconName:    "resources:postmessage",
+											Data: AnalyzerMatch{
+												FilePath:     "test.go",
+												AnalyzerName: "test",
+												Value:        "window.postMessage",
+												Tags:         map[string]bool{"postMessage": true},
+											},
+										},
 									},
 								},
 							},
@@ -147,29 +173,48 @@ func TestFormatMatchesV1(t *testing.T) {
 					FilePath:     "test.go",
 					AnalyzerName: "test",
 					Value:        "document.cookie",
-					Tags:         map[string]bool{"cookie-manipulation": true},
+					Tags:         map[string]bool{"cookie": true, "cookie-assignment": true},
 				},
 			},
 			expected: []ASTAnalyzerTreeNode{
 				{
-					Label:    "Storage",
-					IconName: "folder",
-					Type:     ASTAnalyzerTreeNodeTypeNavigation,
+					Label:       "Client Behavior",
+					Description: "[1]",
+					IconName:    "resources:javascript",
+					Type:        ASTAnalyzerTreeNodeTypeNavigation,
 					Children: []ASTAnalyzerTreeNode{
 						{
-							Label:    "Cookie Manipulation",
-							IconName: "folder",
-							Type:     ASTAnalyzerTreeNodeTypeNavigation,
+							Label:       "Storage",
+							Description: "[1]",
+							IconName:    "resources:storage",
+							Type:        ASTAnalyzerTreeNodeTypeNavigation,
 							Children: []ASTAnalyzerTreeNode{
 								{
-									Type:        ASTAnalyzerTreeNodeTypeMatch,
-									Label:       "document.cookie",
-									Description: "test.go",
-									Data: AnalyzerMatch{
-										FilePath:     "test.go",
-										AnalyzerName: "test",
-										Value:        "document.cookie",
-										Tags:         map[string]bool{"cookie-manipulation": true},
+									Label:       "Cookie",
+									Description: "[1]",
+									IconName:    "resources:cookie",
+									Type:        ASTAnalyzerTreeNodeTypeNavigation,
+									Children: []ASTAnalyzerTreeNode{
+										{
+											Label:       "Assignment",
+											Description: "[1]",
+											IconName:    "resources:cookie",
+											Type:        ASTAnalyzerTreeNodeTypeNavigation,
+											Children: []ASTAnalyzerTreeNode{
+												{
+													Type:        ASTAnalyzerTreeNodeTypeMatch,
+													Label:       "document.cookie",
+													Description: "",
+													IconName:    "resources:cookie",
+													Data: AnalyzerMatch{
+														FilePath:     "test.go",
+														AnalyzerName: "test",
+														Value:        "document.cookie",
+														Tags:         map[string]bool{"cookie": true, "cookie-assignment": true},
+													},
+												},
+											},
+										},
 									},
 								},
 							},
@@ -185,53 +230,66 @@ func TestFormatMatchesV1(t *testing.T) {
 					FilePath:     "test.go",
 					AnalyzerName: "test",
 					Value:        "window.location.hash",
-					Tags:         map[string]bool{"hash-change": true},
+					Tags:         map[string]bool{"onhashchange": true},
 				},
 				{
 					FilePath:     "test.go",
 					AnalyzerName: "test",
 					Value:        "document.write",
-					Tags:         map[string]bool{"dom-xss": true},
+					Tags:         map[string]bool{"inner-html": true},
 				},
 			},
 			expected: []ASTAnalyzerTreeNode{
 				{
-					Label:    "Behavior",
-					IconName: "folder",
-					Type:     ASTAnalyzerTreeNodeTypeNavigation,
+					Label:       "Client Behavior",
+					Description: "[2]",
+					IconName:    "resources:javascript",
+					Type:        ASTAnalyzerTreeNodeTypeNavigation,
 					Children: []ASTAnalyzerTreeNode{
 						{
-							Label:    "Hash Change",
-							IconName: "folder",
-							Type:     ASTAnalyzerTreeNodeTypeNavigation,
+							Label:       "Events",
+							Description: "[1]",
+							IconName:    "resources:event",
+							Type:        ASTAnalyzerTreeNodeTypeNavigation,
 							Children: []ASTAnalyzerTreeNode{
 								{
-									Type:        ASTAnalyzerTreeNodeTypeMatch,
-									Label:       "window.location.hash",
-									Description: "test.go",
-									Data: AnalyzerMatch{
-										FilePath:     "test.go",
-										AnalyzerName: "test",
-										Value:        "window.location.hash",
-										Tags:         map[string]bool{"hash-change": true},
+									Label:       "onhashchange",
+									Description: "[1]",
+									IconName:    "resources:event",
+									Type:        ASTAnalyzerTreeNodeTypeNavigation,
+									Children: []ASTAnalyzerTreeNode{
+										{
+											Type:        ASTAnalyzerTreeNodeTypeMatch,
+											Label:       "window.location.hash",
+											Description: "",
+											IconName:    "resources:event",
+											Data: AnalyzerMatch{
+												FilePath:     "test.go",
+												AnalyzerName: "test",
+												Value:        "window.location.hash",
+												Tags:         map[string]bool{"onhashchange": true},
+											},
+										},
 									},
 								},
 							},
 						},
 						{
-							Label:    "Misc",
-							IconName: "folder",
-							Type:     ASTAnalyzerTreeNodeTypeNavigation,
+							Label:       "innerHTML",
+							Description: "[1]",
+							IconName:    "resources:javascript",
+							Type:        ASTAnalyzerTreeNodeTypeNavigation,
 							Children: []ASTAnalyzerTreeNode{
 								{
 									Type:        ASTAnalyzerTreeNodeTypeMatch,
 									Label:       "document.write",
-									Description: "test.go",
+									Description: "",
+									IconName:    "resources:javascript",
 									Data: AnalyzerMatch{
 										FilePath:     "test.go",
 										AnalyzerName: "test",
 										Value:        "document.write",
-										Tags:         map[string]bool{"dom-xss": true},
+										Tags:         map[string]bool{"inner-html": true},
 									},
 								},
 							},
@@ -251,7 +309,6 @@ func TestFormatMatchesV1(t *testing.T) {
 }
 
 func TestFormatMatchesV1WithExampleData(t *testing.T) {
-	// Read the matches.json file
 	matchesJSON, err := os.ReadFile("example/matches.json")
 	if err != nil {
 		t.Fatalf("Failed to read matches.json: %v", err)
@@ -262,14 +319,11 @@ func TestFormatMatchesV1WithExampleData(t *testing.T) {
 		t.Fatalf("Failed to unmarshal matches.json: %v", err)
 	}
 
-	// Format the matches
 	result := formatMatchesV1(matches)
 
-	// Basic validation of the result
 	assert.NotNil(t, result)
 	assert.NotEmpty(t, result)
 
-	// Verify that all matches were processed
 	totalMatches := 0
 	var countMatches func(node ASTAnalyzerTreeNode)
 	countMatches = func(node ASTAnalyzerTreeNode) {
@@ -284,9 +338,8 @@ func TestFormatMatchesV1WithExampleData(t *testing.T) {
 		countMatches(rootNode)
 	}
 
-	assert.Equal(t, 30, totalMatches, "Expected 30 matches in the result")
+	assert.Equal(t, 2, totalMatches, "Expected 2 matches in the result")
 
-	// Verify specific categories exist
 	categories := make(map[string]bool)
 	var collectCategories func(node ASTAnalyzerTreeNode)
 	collectCategories = func(node ASTAnalyzerTreeNode) {
@@ -301,8 +354,7 @@ func TestFormatMatchesV1WithExampleData(t *testing.T) {
 		collectCategories(rootNode)
 	}
 
-	// Verify some expected categories are present
-	expectedCategories := []string{"Data", "Iframe Communication", "Storage", "Behavior"}
+	expectedCategories := []string{"Data", "Client Behavior"}
 	for _, category := range expectedCategories {
 		assert.True(t, categories[category], "Expected category %s to be present", category)
 	}

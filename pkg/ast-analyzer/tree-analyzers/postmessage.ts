@@ -2,7 +2,7 @@ import { Node } from "acorn";
 import { Analyzer, AnalyzerMatch, AnalyzerParams } from "../types";
 import { Visitor } from "../walker";
 
-export const POSTMESSAGE_ANALYZER_NAME = "postmessage";
+export const POSTMESSAGE_ANALYZER_NAME = "web-messaging";
 
 const postmessageAnalyzerBuilder = (
   args: AnalyzerParams,

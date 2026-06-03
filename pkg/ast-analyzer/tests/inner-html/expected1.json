@@ -1,7 +1,7 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
-    "analyzerName": "inner-html",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "container1.innerHTML = '<div>First container</div>'",
     "start": {
       "line": 24,
@@ -12,12 +12,13 @@
       "column": 51
     },
     "tags": {
-      "inner-html": true
+      "inner-html": true,
+      "dom-sink-innerhtml": true
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
-    "analyzerName": "inner-html",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "container2.innerHTML = '<div>Second container</div>'",
     "start": {
       "line": 25,
@@ -28,12 +29,13 @@
       "column": 52
     },
     "tags": {
-      "inner-html": true
+      "inner-html": true,
+      "dom-sink-innerhtml": true
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
-    "analyzerName": "inner-html",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "div.innerHTML = '<p>Function content</p>'",
     "start": {
       "line": 11,
@@ -44,12 +46,13 @@
       "column": 43
     },
     "tags": {
-      "inner-html": true
+      "inner-html": true,
+      "dom-sink-innerhtml": true
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
-    "analyzerName": "inner-html",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "document.getElementById('container').innerHTML = '<div>Hello World</div>'",
     "start": {
       "line": 2,
@@ -60,12 +63,13 @@
       "column": 73
     },
     "tags": {
-      "inner-html": true
+      "inner-html": true,
+      "dom-sink-innerhtml": true
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
-    "analyzerName": "inner-html",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "document.getElementById('greeting').innerHTML = `<h1>Welcome ${name}</h1>`",
     "start": {
       "line": 29,
@@ -76,12 +80,13 @@
       "column": 74
     },
     "tags": {
-      "inner-html": true
+      "inner-html": true,
+      "dom-sink-innerhtml": true
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
-    "analyzerName": "inner-html",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "document.getElementById('result').innerHTML = '<p>Button clicked!</p>'",
     "start": {
       "line": 33,
@@ -92,12 +97,13 @@
       "column": 72
     },
     "tags": {
-      "inner-html": true
+      "inner-html": true,
+      "dom-sink-innerhtml": true
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
-    "analyzerName": "inner-html",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "element.innerHTML = '<span>Dynamic content</span>'",
     "start": {
       "line": 6,
@@ -108,12 +114,13 @@
       "column": 50
     },
     "tags": {
-      "inner-html": true
+      "inner-html": true,
+      "dom-sink-innerhtml": true
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
-    "analyzerName": "inner-html",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/inner-html/files/1.js",
+    "analyzerName": "dom-sinks",
     "value": "obj.element.innerHTML = '<div>Nested access</div>'",
     "start": {
       "line": 19,
@@ -124,7 +131,8 @@
       "column": 50
     },
     "tags": {
-      "inner-html": true
+      "inner-html": true,
+      "dom-sink-innerhtml": true
     }
   }
 ]

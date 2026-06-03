@@ -4,3 +4,6 @@ dist
 extracted
 .DS_Store
 .cursor
+jxscout
+jxscout.exe
+internal/core/dbeventbus/testdb*

@@ -160,6 +160,8 @@ var graphqlOtherTags = []string{"graphql-other"}
 
 var dataTags = common.AppendAll(
 	pathTags,
+	extensionTags,
+	mimeTypeTags,
 	hostnameTags,
 	regexTags,
 	secretTags,

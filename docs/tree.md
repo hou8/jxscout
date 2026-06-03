@@ -31,8 +31,7 @@ Client Behavior
 -- -- -- [property-*]
 -- -- sessionStorage
 -- -- -- [property-*]
--- Possible Rest Client
--- -- [method-*]
+
 
 Data
 -- Paths
@@ -47,7 +46,6 @@ Data
 -- MIME Type
 -- Regex
 -- -- Match
--- -- Pattern
 -- Secrets
 -- -- [secret-type-*]
 -- GraphQL

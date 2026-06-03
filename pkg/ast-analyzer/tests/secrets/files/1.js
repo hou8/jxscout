@@ -1607,3 +1607,4 @@ const zendesk_travis_github = "zendesk_travisgithub :"; // zendesk_travis_github
 const zensonatypepassword = "zensonatypepassword ="; // zensonatypepassword
 const zhuliang_gh_token = "zhulianggh_token :"; // zhuliang_gh_token
 const zopim_account_key = "zopim_account-key ="; // zopim_account_key
+const base64Image = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";

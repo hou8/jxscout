@@ -45,6 +45,10 @@ const filterWithQueryParamsPath = "/filter?category=category&sort=sort"; // shou
 const longPathWithQueryParams =
   "/api/v1/users/123/orders/456/status/and/more/segments/of/users/in/users?q=query&page=page"; // should detect
 
+// Endpoint paths with sensitive extensions (should detect)
+const sensitiveBackupPath = "/api/backup.zip"; // should detect
+const sensitiveDbPath = "/config/settings.db"; // should detect
+
 // ===== FULL URLS (SHOULD NOT DETECT) =====
 const documentationUrl = "https://docs.example.com/api"; // should not detect
 const dashboardUrl = "https://dashboard.example.com"; // should not detect

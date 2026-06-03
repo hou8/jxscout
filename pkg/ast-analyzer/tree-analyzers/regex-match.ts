@@ -2,7 +2,7 @@ import { Node } from "acorn";
 import { Analyzer, AnalyzerMatch, AnalyzerParams } from "../types";
 import { Visitor } from "../walker";
 
-export const REGEX_MATCH_ANALYZER_NAME = "regex-match";
+export const REGEX_MATCH_ANALYZER_NAME = "regex";
 
 const regexMatchAnalyzerBuilder = (
   args: AnalyzerParams,

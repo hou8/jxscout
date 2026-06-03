@@ -2,7 +2,7 @@ import { Node, MemberExpression } from "acorn";
 import { Analyzer, AnalyzerMatch, AnalyzerParams } from "../types";
 import { Visitor } from "../walker";
 
-export const INNER_HTML_ANALYZER_NAME = "inner-html";
+export const INNER_HTML_ANALYZER_NAME = "dom-sinks";
 
 const DANGEROUS_ASSIGNMENTS = ["innerHTML", "outerHTML", "srcDoc"];
 const DANGEROUS_CALLS = ["write", "writeln", "insertAdjacentHTML", "createContextualFragment", "setInnerHTML"];

@@ -1,6 +1,6 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/cookie/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/cookie/files/1.js",
     "analyzerName": "cookie",
     "value": "document.cookie",
     "start": {
@@ -17,7 +17,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/cookie/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/cookie/files/1.js",
     "analyzerName": "cookie",
     "value": "document.cookie",
     "start": {
@@ -34,7 +34,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/cookie/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/cookie/files/1.js",
     "analyzerName": "cookie",
     "value": "document.cookie",
     "start": {
@@ -51,7 +51,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/cookie/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/cookie/files/1.js",
     "analyzerName": "cookie",
     "value": "document.cookie = \"name=value; expires=Fri, 31 Dec 2023 23:59:59 GMT\"",
     "start": {
@@ -68,7 +68,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/cookie/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/cookie/files/1.js",
     "analyzerName": "cookie",
     "value": "document.cookie = \"name=value; path=/\"",
     "start": {
@@ -85,7 +85,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/cookie/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/cookie/files/1.js",
     "analyzerName": "cookie",
     "value": "document.cookie = \"name=value\"",
     "start": {
@@ -102,7 +102,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/cookie/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/cookie/files/1.js",
     "analyzerName": "cookie",
     "value": "document.cookie = `${name}=${value}`",
     "start": {

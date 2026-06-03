@@ -1,6 +1,6 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/onhashchange/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/onhashchange/files/1.js",
     "analyzerName": "onhashchange",
     "value": "window.addEventListener(\"hashchange\", function() {\n  console.log(\"Hash changed via addEventListener!\");\n})",
     "start": {
@@ -16,7 +16,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/onhashchange/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/onhashchange/files/1.js",
     "analyzerName": "onhashchange",
     "value": "window.onhashchange = function() {\n  console.log(\"First handler\");\n}",
     "start": {
@@ -32,7 +32,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/onhashchange/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/onhashchange/files/1.js",
     "analyzerName": "onhashchange",
     "value": "window.onhashchange = function() {\n  console.log(\"Hash changed!\");\n}",
     "start": {
@@ -48,7 +48,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/onhashchange/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/onhashchange/files/1.js",
     "analyzerName": "onhashchange",
     "value": "window.onhashchange = function() {\n  console.log(\"Second handler\");\n}",
     "start": {
@@ -64,7 +64,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/onhashchange/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/onhashchange/files/1.js",
     "analyzerName": "onhashchange",
     "value": "window.onhashchange = handler",
     "start": {

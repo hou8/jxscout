@@ -1,6 +1,6 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/window-open/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/window-open/files/1.js",
     "analyzerName": "window-open",
     "value": "window.open('https://example.com', '_blank', 'width=500,height=500')",
     "start": {
@@ -16,7 +16,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/window-open/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/window-open/files/1.js",
     "analyzerName": "window-open",
     "value": "window.open('https://example.com')",
     "start": {
@@ -32,7 +32,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/window-open/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/window-open/files/1.js",
     "analyzerName": "window-open",
     "value": "window.open(`${baseUrl}/path`)",
     "start": {
@@ -48,7 +48,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/window-open/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/window-open/files/1.js",
     "analyzerName": "window-open",
     "value": "window.open(config.url, config.target)",
     "start": {
@@ -64,7 +64,7 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/window-open/files/1.js",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/window-open/files/1.js",
     "analyzerName": "window-open",
     "value": "window.open(url)",
     "start": {

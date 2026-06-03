@@ -1,7 +1,7 @@
 [
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/regex-match/files/1.js",
-    "analyzerName": "regex-match",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/regex-match/files/1.js",
+    "analyzerName": "regex",
     "value": "\"test123\".match(/\\d+/)",
     "start": {
       "line": 4,
@@ -16,8 +16,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/regex-match/files/1.js",
-    "analyzerName": "regex-match",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/regex-match/files/1.js",
+    "analyzerName": "regex",
     "value": "/[a-z]+/.exec(\"abc123\")",
     "start": {
       "line": 14,
@@ -32,8 +32,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/regex-match/files/1.js",
-    "analyzerName": "regex-match",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/regex-match/files/1.js",
+    "analyzerName": "regex",
     "value": "/test/.test(\"testing\")",
     "start": {
       "line": 9,
@@ -48,8 +48,8 @@
     }
   },
   {
-    "filePath": "/Users/francisconeves/projects/jxscout/pkg/ast-analyzer/tests/regex-match/files/1.js",
-    "analyzerName": "regex-match",
+    "filePath": "/home/hou8/codebase/edc-mind/vendors/jxscout/pkg/ast-analyzer/tests/regex-match/files/1.js",
+    "analyzerName": "regex",
     "value": "str.match(/Hello/)",
     "start": {
       "line": 3,

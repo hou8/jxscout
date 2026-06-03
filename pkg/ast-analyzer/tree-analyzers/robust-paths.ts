@@ -238,7 +238,7 @@ function isHighEntropy(str: string, threshold = 4.9): boolean {
 // most logic stolen from https://github.com/BishopFox/jsluice
 // all credit to them
 
-export const ROBUST_PATHS_ANALYZER_NAME = "robust-paths";
+export const ROBUST_PATHS_ANALYZER_NAME = "endpoints";
 
 // Common file extensions that should be tagged as extensions
 const FILE_EXTENSIONS = new Set([
@@ -308,7 +308,18 @@ const FILE_EXTENSIONS = new Set([
   ".bundle",
 ]);
 
-const hostnamesToExclude = new Set(["www.w3.org", "reactjs.org"]);
+const hostnamesToExclude = new Set([
+  "www.w3.org",
+  "reactjs.org",
+  "element-plus.org",
+  "vuejs.org",
+]);
+
+const EXCLUDED_PATH_EXTENSIONS = new Set([
+  ".css", ".svg", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico",
+  ".woff", ".woff2", ".ttf", ".eot", ".otf", ".mp4", ".webm", ".mp3", ".wav",
+  ".vue", ".js", ".ts", ".jsx", ".tsx", ".html"
+]);
 
 function containsAny(str: string, chars: string): boolean {
   return chars.split("").some((char) => str.includes(char));
@@ -319,6 +330,16 @@ function hasPrefix(str: string, prefix: string): boolean {
 }
 
 function isValidPath(value: string): boolean {
+  // Exclude paths with uninteresting static resource extensions
+  const basePath = value.split(/[?#]/)[0];
+  const lastDotIndex = basePath.lastIndexOf(".");
+  if (lastDotIndex !== -1) {
+    const ext = basePath.slice(lastDotIndex).toLowerCase();
+    if (EXCLUDED_PATH_EXTENSIONS.has(ext)) {
+      return false;
+    }
+  }
+
   // Check if path starts with a letter or forward slash
   if (!/^[a-zA-Z/]/.test(value)) {
     return false;
