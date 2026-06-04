@@ -11,7 +11,6 @@ import (
 	"github.com/francisconeves97/jxscout/internal/modules/ast-analyzer"
 	jxscouttypes "github.com/francisconeves97/jxscout/pkg/types"
 	"github.com/nats-io/nats.go"
-	"github.com/nats-io/nats.go/jetstream"
 )
 
 type NatsModule struct {
@@ -66,19 +65,6 @@ func (m *NatsModule) Initialize(sdk *jxscouttypes.ModuleSDK) error {
 		return errutil.Wrapf(err, "failed to connect to NATS at %s", sdk.Options.NatsURL)
 	}
 	m.nc = nc
-
-	js, err := jetstream.New(nc)
-	if err != nil {
-		return errutil.Wrap(err, "failed to create jetstream client")
-	}
-
-	_, err = js.CreateOrUpdateStream(sdk.Ctx, jetstream.StreamConfig{
-		Name:     "jxscout",
-		Subjects: []string{"jxscout.ast.analysis"},
-	})
-	if err != nil {
-		return errutil.Wrap(err, "failed to create or update jetstream stream")
-	}
 
 	// Subscribe to TopicASTAnalysisCompleted
 	err = sdk.DBEventBus.Subscribe(
